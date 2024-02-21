@@ -3,7 +3,7 @@ export default function FiveTosixyears() {
     <>
       <div>
         <h2 className="schedule-header">Diet plan for 5 to 6 Years</h2>
-        <img className="vac-img" src="./images/5To6year.jpg" />
+        <img className="vac-img" src="/images/5to6year.jpg" />
 
         <h5 className="description">Proper Diet Plan For Your child</h5>
         <p className="desc-para">

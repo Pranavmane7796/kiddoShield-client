@@ -294,6 +294,7 @@ function App() {
             element={
               <>
                 <DoctorLogin></DoctorLogin>
+                <Footer></Footer>
               </>
             }
           ></Route>

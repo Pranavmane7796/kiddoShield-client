@@ -7,12 +7,20 @@ export default function Footer() {
       <footer className="footer">
         <ul className="footer__nav">
           <li className="footer__item">
-            <Link className="footer__link" to={"/aboutus"}>
+            <Link
+              className="footer__link"
+              to={"/aboutus"}
+              onClick={window.scrollTo(0, 0)}
+            >
               About
             </Link>
           </li>
           <li className="footer__item">
-            <Link className="footer__link" to={"/contactus"}>
+            <Link
+              className="footer__link"
+              to={"/contactus"}
+              onClick={window.scrollTo(0, 0)}
+            >
               Contact Us
             </Link>
           </li>

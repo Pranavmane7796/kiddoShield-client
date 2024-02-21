@@ -3,7 +3,7 @@ export default function ThreeToFouryear() {
     <>
       <div>
         <h2 className="schedule-header">Diet plan for 3 to 4 Years</h2>
-        <img className="vac-img" src="./images/3to4year.jpg" />
+        <img className="vac-img" src="\images\3to4year.jpg" />
 
         <h5 className="description">Proper Diet Plan For Your child</h5>
         <p className="desc-para">

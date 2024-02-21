@@ -3,7 +3,7 @@ import userService from "../../service/userService.js";
 import swal from "sweetalert";
 import "../../styles/forgotpassword.css";
 import hospitalService from "../../service/hospitalService.js";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 
 export default function DoctorLogin() {
@@ -59,49 +59,72 @@ export default function DoctorLogin() {
 
   return (
     <>
-      <div
-        className="forgot-password-container"
-        style={{ marginTop: "15%", marginLeft: "30%" }}
+      <nav
+        className="navbar  fixed-top "
+        id="navbar--id"
+        style={{ background: "rgb(240, 240, 240)" }}
       >
-        <h1 style={{ marginLeft: "23%", fontSize: "30px" }}>Doctor Login</h1>
-        <div class="card resetpword-card" style={{ width: "30%" }}>
-          <div class="card-body">
-            <h2 class="card-title">Login</h2>
-            <form onSubmit={submitHandler}>
-              <div className="form-group">
-                <label> Enter Email:</label>
-                <input
-                  type="email"
-                  value={email}
-                  onChange={emailHandler}
-                  placeholder="Email"
-                  class="form-control"
-                  required
-                />
-              </div>
-              <br />
-              <div className="form-group">
-                <label> Enter Password:</label>
-                <input
-                  type="password"
-                  value={password}
-                  onChange={pwordHandler}
-                  placeholder="Confirm Password"
-                  class="form-control"
-                  required
-                />
-              </div>
-              <br />
-              <button
-                type="submit"
-                style={{ marginLeft: "40%" }}
-                className="btn btn-primary "
-                id="resetpword-btn"
-                // onClick={}
-              >
-                Submit
-              </button>
-            </form>
+        <Link to="/doctorlogin">
+          <img src="/images/kidLogo.png" style={{ width: "150px" }} />
+        </Link>
+      </nav>
+      <div
+        className="container"
+        id="feedback-container"
+        style={{ marginBottom: "10%" }}
+      >
+        <div className="leftFeedback">
+          {/* Left portion */}
+          <h4 className="feedbackHeader">A guardian of child wellness.</h4>
+          <div className="row" id="row--vaccine">
+            <div className="col-sm"></div>
+            <div className="col-sm"></div>
+          </div>
+        </div>
+
+        <div
+          className="rightFeedback"
+          style={{ marginTop: "19%", marginLeft: "30%" }}
+        >
+          <h1 style={{ marginLeft: "23%", fontSize: "30px" }}>Doctor Login</h1>
+          <div class="card resetpword-card" style={{ width: "40%" }}>
+            <div class="card-body">
+              <form onSubmit={submitHandler}>
+                <div className="form-group">
+                  <label> Enter Email:</label>
+                  <input
+                    type="email"
+                    value={email}
+                    onChange={emailHandler}
+                    placeholder="Email"
+                    class="form-control"
+                    required
+                  />
+                </div>
+                <br />
+                <div className="form-group">
+                  <label> Enter Password:</label>
+                  <input
+                    type="password"
+                    value={password}
+                    onChange={pwordHandler}
+                    placeholder="Confirm Password"
+                    class="form-control"
+                    required
+                  />
+                </div>
+                <br />
+                <button
+                  type="submit"
+                  style={{ marginLeft: "40%" }}
+                  className="btn btn-primary "
+                  id="resetpword-btn"
+                  // onClick={}
+                >
+                  Submit
+                </button>
+              </form>
+            </div>
           </div>
         </div>
       </div>

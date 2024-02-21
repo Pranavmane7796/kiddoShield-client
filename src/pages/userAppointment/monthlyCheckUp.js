@@ -1,12 +1,15 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import "../../styles/scheduleVaccination.css";
 import hospitalService from "../../service/hospitalService";
 import userEvent from "@testing-library/user-event";
 import userService from "../../service/userService";
 import { useLocation, useNavigate, useParams } from "react-router-dom";
 import swal from "sweetalert";
+
+import emailjs from "@emailjs/browser";
 export default function MonthlyCheckUp() {
   const [list, setplist] = useState();
+  const form = useRef();
   const [specialization, setSpecialization] = useState();
   const [selectedSpecialization, setSelectedSpecialization] = useState("");
   const [availableDoctors, setAvailableDoctors] = useState([]);
@@ -89,6 +92,21 @@ export default function MonthlyCheckUp() {
     try {
       const response = await userService.consultDoctor(uid, obj);
       if (response.data === "appointment booked") {
+        //----------------------------------------------
+        emailjs
+          .sendForm("service_ayycpun", "template_w3inmv5", form.current, {
+            publicKey: "w-hlJ1RqHPuR_Pq3A",
+            to_email: form.current.to_email.value,
+          })
+          .then(
+            () => {
+              console.log("SUCCESS!");
+            },
+            (error) => {
+              console.log("FAILED...", error.text);
+            }
+          );
+
         swal("appointment booked successfully");
       }
     } catch (error) {
@@ -120,15 +138,17 @@ export default function MonthlyCheckUp() {
           </div>
         </div>
       </div>
-      <form className="form-schedule">
+      <form ref={form} className="form-schedule">
         <div
           id="schedule-vacc"
           className="container"
           style={{ marginTop: "1%" }}
         >
+          <input hidden type="text" name="from_name" value={"kiddoShield"} />
           <label for="uname">Enter Children Id</label>
           <input
             readOnly
+            name="to_name"
             style={{ fontSize: "150%" }}
             type="text"
             className="form-control"
@@ -139,6 +159,7 @@ export default function MonthlyCheckUp() {
           />
           <label for="uname">Select Date</label>
           <input
+            name="message"
             style={{ fontSize: "150%" }}
             type="date"
             className="form-control"
@@ -148,6 +169,7 @@ export default function MonthlyCheckUp() {
           />
           <label for="cnumber">Select Time</label>
           <input
+            name="message"
             style={{ fontSize: "150%" }}
             type="time"
             className="form-control"
@@ -167,6 +189,7 @@ export default function MonthlyCheckUp() {
           <label for="cnumber">Email</label>
           <input
             readOnly
+            name="to_email"
             value={user.email}
             style={{ fontSize: "150%" }}
             type="email"
@@ -177,8 +200,9 @@ export default function MonthlyCheckUp() {
           />
           <label>Specialization</label>&nbsp;&nbsp;&nbsp;&nbsp;
           <select
+            name="message"
             id="specialization"
-            name="Specialization"
+            // name="Specialization"
             style={{ fontSize: "20px", borderRadius: "10px" }}
             onChange={handleSpecializationChange}
           >
