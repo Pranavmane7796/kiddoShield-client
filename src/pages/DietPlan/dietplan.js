@@ -90,6 +90,9 @@ export default function DietPlan() {
         </div>
         <div className="rightcontainer">
           {state === "" ? <SixTotwelveMonths /> : null}
+          {state === "SixTotwelveMonths" ? (
+            <SixTotwelveMonths></SixTotwelveMonths>
+          ) : null}
           {state === "OneTotwoyear" ? <OneTotwoyear /> : null}
           {state === "ThreeTofouryear" ? <ThreeToFouryear /> : null}
           {state === "FiveTosixyears" ? <FiveTosixyears /> : null}
