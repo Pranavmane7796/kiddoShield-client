@@ -25,7 +25,7 @@ export default function Footer() {
             </Link>
           </li>
         </ul>
-        <img src="images/kidlogo.png" alt="Logo" class="footer__logo" />
+        <img src="./images/kidlogo.png" alt="Logo" class="footer__logo" />
         <p class="footer__copyright">
           &copy; 2024 kiddoShield all rights reserved
         </p>

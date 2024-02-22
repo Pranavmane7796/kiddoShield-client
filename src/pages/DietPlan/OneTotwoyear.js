@@ -3,7 +3,7 @@ export default function OneTotwoyear() {
     <>
       <div>
         <h2 className="schedule-header">Diet plan for 1 to 2 Years</h2>
-        <img className="vac-img" src="./images/1To2year.jpg" />
+        <img className="vac-img" src="./images/1to2year.jpg" />
 
         <h5 className="description">Proper Diet Plan For Your Baby</h5>
         <p className="desc-para">
