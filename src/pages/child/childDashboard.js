@@ -73,6 +73,7 @@ export default function ChildDashboard() {
           console.log(res);
         });
         navigate("/");
+        sessionStorage.setItem("loginID", false);
         swal("success");
       } catch (error) {
         console.log(error);
