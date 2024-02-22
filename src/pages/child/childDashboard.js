@@ -129,10 +129,10 @@ export default function ChildDashboard() {
               </p>
               <button
                 onClick={() => {
-                  window.location.reload();
                   navigate(`/reschedulevaccine/${data.aid}`, {
                     state: { childdata: data },
                   });
+                  window.location.reload();
                 }}
                 className="btn btn-dark btn-small"
               >
