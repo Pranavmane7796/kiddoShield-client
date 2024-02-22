@@ -8,6 +8,8 @@ import { Link } from "react-router-dom";
 export default function HospitalAllAppointment() {
   const [plist, setplist] = useState([]);
 
+  let date = new Date();
+  let getDay = date.getDate();
   //-----------------------------------------------------
   const fetchdata = () => {
     hospitalService
@@ -22,6 +24,7 @@ export default function HospitalAllAppointment() {
   useEffect(() => {
     fetchdata();
   }, []);
+
   //----------------------------------------------------
   return (
     <>

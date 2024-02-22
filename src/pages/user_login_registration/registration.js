@@ -76,7 +76,7 @@ export default function Registration() {
           swal("Enter unique email ID");
         } else {
           swal(
-            "An error occurred while registering the Doctor. Please try again later."
+            "An error occurred while registering the User. Please try again later."
           );
         }
       }
