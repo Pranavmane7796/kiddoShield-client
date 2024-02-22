@@ -65,7 +65,7 @@ export default function Feedback() {
           <div className="form-group">
             <label for="feedback">Give Feedback</label>
             <textarea
-              maxLength="10"
+              maxLength="400"
               rows={10}
               title="Upto 400 characters allowed"
               className="form-control"
